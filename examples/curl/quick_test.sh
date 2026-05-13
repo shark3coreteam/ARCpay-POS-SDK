@@ -38,7 +38,7 @@ CHARGE_RES=$(curl -s -X POST "$BASE_URL/execute-charge" \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
   -d "{
-    \"paymentID\": \"$PAYMENT_ID\",
+    \"txid\": \"$PAYMENT_ID\",
     \"amount\": \"$AMOUNT\",
     \"uid\": \"$USER_UID\"
   }")
