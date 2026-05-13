@@ -81,13 +81,3 @@ The `app.js` file demonstrates a complete asynchronous workflow:
 > **輪詢間隔**：範例預設每 3 秒檢查一次狀態。您可以根據 POS 硬體效能調整此間隔。
 
 ---
-
-## ✅ Summary / 總結
-
-This sample provides a practical starting point for integrating **ARCpay POS API** with **Node.js**.  
-此範例提供了整合 **ARCpay POS API** 與 **Node.js** 的實用起點。
-```
-
-這份 README.md 採用了 **雙語對照 (英文/中文)**、清晰的章節劃分、程式碼區塊與提示框，讓開發者能快速理解並上手。  
-
-要不要我幫你加上 **範例輸出結果 (API 回傳 JSON)** 的展示區塊，讓文件更完整？
