@@ -1,4 +1,3 @@
-這裡是一份精心排版的 **README.md** 範例，讓你的專案文件看起來專業又清晰：
 
 ```markdown
 # Node.js Integration Example / Node.js 整合範例
