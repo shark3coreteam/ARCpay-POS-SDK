@@ -40,7 +40,7 @@ https://pos.ap3.tw/api/verify/{uid}
 
 **範例請求**
 ```bash
-curl -X GET "https://pos.ap3.tw/api/verify/27016297-1" \
+curl -X GET "https://pos.ap3.tw/api/verify/12345678-9" \
   -H "Authorization: Bearer {your_accessToken}" \
   -H "Content-Type: application/json"
 ```
