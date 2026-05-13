@@ -6,6 +6,13 @@
 ---
 
 ## 概述
+<!-- 在 README 頂端加入這段 -->
+<div align="right">
+  <b>語言切換：</b>
+  <a href="README.md">English</a> 
+  <span>|</span>
+  <a href="README.zh-TW.md">繁體中文</a>
+</div>
 本文件說明 **ARCpay-POS-SDK** 與 POS 機廠商整合的支付流程、API 規格、錯誤處理與整合檢查清單。目標是讓 POS 廠商在取得 **access token** 後，能在其產品內建立支援 ARCpay 的支付流程，引導客戶使用 PI Network 的 KYC 用戶完成付款。
 
 ---
