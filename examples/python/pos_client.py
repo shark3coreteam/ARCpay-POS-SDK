@@ -41,7 +41,7 @@ class ARCpayClient:
         print(f"[Charge] Requesting / 請求扣款: {amount} Pi...")
         url = f"{self.base_url}/execute-charge"
         payload = {
-            "paymentID": payment_id,
+            "txid": payment_id,
             "uid": uid,
             "amount": str(amount), # Ensure amount is a string / 確保金額為字串
             "metadata": metadata or {}
