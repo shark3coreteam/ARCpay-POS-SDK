@@ -23,7 +23,7 @@ curl -X POST "[https://pos.ap3.tw/api/execute-charge](https://pos.ap3.tw/api/exe
   -H "Authorization: Bearer {your_accessToken}" \
   -H "Content-Type: application/json" \
   -d '{
-    "paymentID": "YOUR_PAYMENT_ID",
+    "txid": "YOUR_PAYMENT_ID",
     "amount": "20",
     "uid": "12345678-9",
     "metadata": { "store": "Store_001" }
