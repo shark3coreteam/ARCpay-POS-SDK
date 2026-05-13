@@ -70,7 +70,7 @@ curl -X GET "https://pos.ap3.tw/api/verify/12345678-9" \
 ---
 
 ### 發起扣款請求 request Pi coin
-**說明**：使用 `paymentID` 與付款者 `uid` 發起扣款。若 POS 使用本地貨幣，請先換算為對應 PI 數量。  
+**說明**：使用 `txid` (paymentid) 與付款者 `uid` 發起扣款。若 POS 使用本地貨幣，請先換算為對應 PI 數量。  
 **Method**：POST  
 **Endpoint**
 ```
@@ -86,7 +86,7 @@ curl -X POST "https://pos.ap3.tw/api/execute-charge" \
   -H "Authorization: Bearer {your_accessToken}" \
   -H "Content-Type: application/json" \
   -d '{
-    "paymentID": "stx2e603309c150b503eb641......",
+    "txid": "stx2e603309c150b503eb641......",
     "amount": "5",
     "uid": "12345678-7",
     "metadata": {
@@ -192,7 +192,7 @@ curl -X GET "https://pos.ap3.tw/api/events/stx2e603309c150b503eb641......"
 ## 範例整合序列
 1. 使用者在 POS 選擇 PI 支付並掃描 QR，取得 `uid`。  
 2. POS 後端呼叫 `GET /api/verify/{uid}` → 取得 `paymentID`。  
-3. POS 後端呼叫 `POST /api/execute-charge` 帶入 `paymentID`、`uid`、`amount`、`metadata`。  
+3. POS 後端呼叫 `POST /api/execute-charge` 帶入 `txid`(paymentID)、`uid`、`amount`、`metadata`。  
 4. 若回傳 `RECHARGE_REQUIRED` → POS 前端顯示引導訊息並後端定期呼叫 `GET /api/events/{txid}`。  
 5. 當 `transaction_detail.pair_verified == true` 且 `status == SUCCESS` → POS 完成本地交易並列印收據或更新訂單狀態。
 
