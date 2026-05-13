@@ -4,9 +4,9 @@
 ![Platform](https://img.shields.io/badge/platform-POS-orange)
 ![Network](https://img.shields.io/badge/network-Pi_Network-purple)
 
+---
 <!-- README.md 英文版 -->
 [English](README.md) | 繁體中文
----
 
 ## 概述
 本文件說明 **ARCpay-POS-SDK** 與 POS 機廠商整合的支付流程、API 規格、錯誤處理與整合檢查清單。目標是讓 POS 廠商在取得 **access token** 後，能在其產品內建立支援 ARCpay 的支付流程，引導客戶使用 PI Network 的 KYC 用戶完成付款。
