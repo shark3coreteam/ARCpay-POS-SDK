@@ -47,7 +47,7 @@ async function verifyUser(uid) {
 /**
  * Step 2: Execute Charge Request
  * 步驟 2: 執行扣款請求
- * @param {string} paymentID - Obtained from Step 1 / 從步驟 1 獲得的 ID
+ * @param {string} txid (paymentID) - Obtained from Step 1 / 從步驟 1 獲得的 ID
  * @param {string} uid - User's account / 付款方帳號
  * @param {string} amount - Amount in Pi / 欲扣除的 Pi 數量
  */
@@ -55,7 +55,7 @@ async function executeCharge(paymentID, uid, amount, metadata = {}) {
     try {
         console.log(`[Charge] Requesting / 請求扣款: ${amount} Pi...`);
         const response = await api.post('/execute-charge', {
-            paymentID,
+            txid,
             amount,
             uid,
             metadata
