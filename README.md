@@ -70,7 +70,7 @@ curl -X GET "https://pos.ap3.tw/api/verify/12345678-9" \
 ---
 
 ### Execute charge request for Pi coin
-**Description**: Use the `paymentID` and payer `uid` to request the Pi payment. If your POS uses local currency, convert to the corresponding PI amount before calling.  
+**Description**: Use the `txid` (paymentID) and payer `uid` to request the Pi payment. If your POS uses local currency, convert to the corresponding PI amount before calling.  
 **Method**: POST  
 **Endpoint**
 ```
@@ -86,7 +86,7 @@ curl -X POST "https://pos.ap3.tw/api/execute-charge" \
   -H "Authorization: Bearer {your_accessToken}" \
   -H "Content-Type: application/json" \
   -d '{
-    "paymentID": "stx2e603309c150b503eb641......",
+    "txid": "stx2e603309c150b503eb641......",
     "amount": "5",
     "uid": "12345678-7",
     "metadata": {
@@ -194,7 +194,7 @@ curl -X GET "https://pos.ap3.tw/api/events/stx2e603309c150b503eb641......" \
 ## Example Integration Flow
 1. User selects PI payment on the POS and scans the ARCpay QR to obtain `uid`.  
 2. POS backend calls `GET /api/verify/{uid}` → receives `paymentID`.  
-3. POS backend calls `POST /api/execute-charge` with `paymentID`, `uid`, `amount`, and `metadata`.  
+3. POS backend calls `POST /api/execute-charge` with `txid` (paymentID), `uid`, `amount`, and `metadata`.  
 4. If response is `RECHARGE_REQUIRED` → POS frontend shows guidance and backend polls `GET /api/events/{txid}`.  
 5. When `transaction_detail.pair_verified == true` and `status == SUCCESS` → POS finalizes the local transaction, prints receipt, and updates order status.
 
